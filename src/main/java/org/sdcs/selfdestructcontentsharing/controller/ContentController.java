@@ -29,7 +29,7 @@ public class ContentController {
                                                  @RequestParam(required = false) MultipartFile file) throws IOException {
         LocalDateTime expiration = LocalDateTime.parse(expirationTime);
         Content createdContent = contentService.createContent(content, viewLimit, expiration, file);
-        String shareableLink = "http://localhost:8081/api/content/view/" + createdContent.getShareableLink();
+        String shareableLink = "https://self-destruct-content-sharing-2b4ed394ac66.herokuapp.com/api/content/view/" + createdContent.getShareableLink();
         return ResponseEntity.ok(shareableLink);
     }
 
