@@ -66,7 +66,7 @@ public class ContentService {
             contentRepository.save(content);
 
             // Check if view limit is exceeded
-            if (currentViews >= content.getViewLimit()) {
+            if (currentViews > content.getViewLimit()) {
                 expireContent(content);
                 return Optional.empty();
             }
